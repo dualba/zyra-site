@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Zyra 登録待ちLP</title>
+  <meta name="description" content="Zyraのベータ版に先行登録。リリース時に最新情報と限定オファーをお届けします。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="zyra_lp.css"/>
+</head>
+<body>
+  <header class="header">
+    <img src="assets/logo.svg" alt="Zyra"/>
+    <strong>Zyra 事前登録</strong>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>AIで広告素材を自動生成<br/>まずは事前登録から</h1>
+      <p>商品画像から広告画像→ショート動画まで。はじめてでも簡単。<br/>正式版リリース時に最新情報と限定オファーをお送りします。</p>
+
+      <div class="card">
+        <form id="waitlistForm" class="form" novalidate>
+          <div class="grid">
+            <div>
+              <label>お名前</label>
+              <input type="text" name="name" placeholder="山田 太郎" required/>
+            </div>
+            <div>
+              <label>メールアドレス</label>
+              <input type="email" name="email" placeholder="you@example.com" required/>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div>
+              <label>業種</label>
+              <select name="businessType" required>
+                <option value="">選択してください</option>
+                <option>飲食店</option>
+                <option>小売店</option>
+                <option>EC</option>
+                <option>個人事業主</option>
+                <option>その他</option>
+              </select>
+            </div>
+            <div>
+              <label>どこで知りましたか？</label>
+              <select name="channel">
+                <option>Instagram</option>
+                <option>YouTube</option>
+                <option>X(Twitter)</option>
+                <option>知人の紹介</option>
+                <option>その他</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:none">
+            <label>メモ（bot対策）</label>
+            <input type="text" name="note" value=""/>
+          </div>
+
+          <label>ご要望（任意）</label>
+          <textarea name="request" rows="3" placeholder="例：テイクアウト用の縦長メニュー動画も欲しい…"></textarea>
+
+          <label style="display:flex;gap:8px;align-items:center">
+            <input type="checkbox" name="consent" required/> 利用規約とプライバシーポリシーに同意します
+          </label>
+
+          <div id="msg"></div>
+
+          <button type="submit" id="submitBtn">登録する</button>
+          <small>※ Google Sheets に安全に保存されます。確認メールは後ほどお送りします。</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="lp_form.js"></script>
+</body>
+</html>
